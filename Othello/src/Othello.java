@@ -1,18 +1,47 @@
 import java.util.List;
+import java.util.Scanner;
 
 public class Othello implements Game {
 	private final static int numPlayers = 2;
 	private static Player[] players;
 	private State current;
-	
+
 	public static void main(String[] args)  {
-		
+		Othello game = new Othello();
+		game.run();
 	}
 
 	public Othello() {
 		players = getPlayers();
 		current = getInitialState();
 	}
+
+	public void run(){
+		boolean init = true;
+		System.out.println("Welcome to Othello!");
+		current.printBoard();
+		System.out.println("Where would you like to move?");
+		System.out.println("Input format: x y");
+
+		Scanner scan = new Scanner(System.in);
+		while (scan.hasNextLine()) {
+			if (!init)
+				current.printBoard();
+			else
+				init = false;
+
+			String input = scan.nextLine().trim();
+			Scanner scanString = new Scanner(input);
+
+			int x = scanString.nextInt();
+			int y = scanString.nextInt();
+			System.out.println("Your move: ("+ x + ", "+y+")");
+
+			move(x, y);
+		}
+		scan.close();
+	}
+
 	
 	@Override
 	public State getInitialState() {
@@ -51,6 +80,10 @@ public class Othello implements Game {
 		return ((State) state).gameOver();
 	}
 
+	public void move(int x, int y) {
+		//
+	}
+
 	@Override
 	public double getUtility(Object state, Object player) {
 		// TODO Auto-generated method stub
@@ -80,5 +113,4 @@ public class Othello implements Game {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
 }

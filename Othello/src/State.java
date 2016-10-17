@@ -106,4 +106,17 @@ public class State {
 		return true;
 	}
 
+	public void printBoard(){
+		for (int i = 0; i < boardSize; i++) {
+			for (int j = 0; j < boardSize; j++) {
+				System.out.print(board[i][j].getDisplay()+ " ");
+			}
+			System.out.println("");
+		}
+	}
+
+	public Color[][] getBoard() {
+		return this.board;
+	}
+
 }

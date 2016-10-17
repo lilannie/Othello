@@ -1,4 +1,3 @@
-
 public class Action {
 	private Pair outer;
 	private Pair middle;
