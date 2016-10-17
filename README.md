@@ -15,8 +15,8 @@ This project includes:
 
 Write a main function which does the following:
 
-o Output the 8x8 board matrix by printing in the console.
-o Take two integers which are the co-ordinates of a move from the user. o Update the board with the user’s move.
-o Take an action by passing the state to the alpha-beta search.
-o Update the board with the agent’s move.
+1. Output the 8x8 board matrix by printing in the console.
+2. Take two integers which are the co-ordinates of a move from the user. o Update the board with the user’s move.
+3. Take an action by passing the state to the alpha-beta search.
+4. Update the board with the agent’s move.
   Repeat the steps until the board is filled or there is no legal move for any player.
